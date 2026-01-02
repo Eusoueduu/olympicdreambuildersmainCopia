@@ -6,37 +6,37 @@ const objectives = [
     icon: Target,
     title: "Disciplina",
     description:
-      "Desenvolver uma rotina de treinamentos consistente, entendendo que a disciplina é a base para alcançar qualquer objetivo no esporte e na vida.",
+      "Desenvolver uma rotina de estudos consistente, entendendo que a disciplina é a base para alcançar qualquer objetivo acadêmico e pessoal.",
   },
   {
     icon: Heart,
     title: "Dedicação",
     description:
-      "Cultivar o amor pelo esporte e a dedicação em cada treino, sabendo que o esforço diário é o que transforma sonhos em realidade.",
+      "Cultivar o interesse pelo aprendizado e a dedicação em cada atividade, sabendo que o esforço diário é o que transforma sonhos em conquistas reais.",
   },
   {
     icon: TrendingUp,
     title: "Esforço Contínuo",
     description:
-      "Manter o compromisso com a evolução constante, superando desafios e aprendendo com cada experiência para crescer como atleta.",
+      "Manter o compromisso com a evolução constante, superando desafios e aprendendo com cada experiência para crescer como estudante e competidor.",
   },
   {
     icon: Users,
     title: "Trabalho em Equipe",
     description:
-      "Valorizar a colaboração e o apoio mútuo, entendendo que grandes conquistas são alcançadas quando trabalhamos juntos.",
+      "Valorizar a colaboração e o apoio mútuo, entendendo que grandes conquistas nas olimpíadas e no conhecimento são alcançadas quando trabalhamos juntos.",
   },
   {
     icon: Lightbulb,
     title: "Aprendizado",
     description:
-      "Buscar conhecimento técnico e tático constantemente, absorvendo ensinamentos de treinadores e experiências competitivas.",
+      "Buscar conhecimento de forma contínua, absorvendo ensinamentos de professores, mentores e experiências em competições acadêmicas.",
   },
   {
     icon: Trophy,
     title: "Projetos Futuros",
     description:
-      "Construir uma trajetória de sucesso no esporte, participando de competições regionais e nacionais, sempre mirando em alcançar o mais alto patamar.",
+      "Construir uma trajetória de sucesso nas olimpíadas estudantis, participando de competições regionais e nacionais, sempre mirando em alcançar o mais alto patamar do conhecimento.",
   },
 ];
 
@@ -54,7 +54,7 @@ const Objetivos = () => {
             <span className="text-gradient-gold">Comunidade Olímpica</span>
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto animate-fade-up animation-delay-200">
-            Conheça os valores e objetivos que guiam nossas jovens atletas em sua jornada rumo à excelência esportiva.
+            Conheça os valores e objetivos que guiam nossos jovens estudantes em sua jornada rumo à excelência acadêmica e às Olimpíadas estudantis.
           </p>
         </div>
       </section>
@@ -92,10 +92,10 @@ const Objetivos = () => {
               Nossa <span className="text-gradient-gold">Visão</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8 animate-fade-up animation-delay-100">
-              A Comunidade Olímpica nasceu com o propósito de inspirar e apoiar jovens atletas em sua jornada esportiva. Acreditamos que o esporte é uma ferramenta poderosa para o desenvolvimento pessoal, ensinando valores como respeito, perseverança e superação.
+              A Comunidade Acadêmica nasceu com o propósito de inspirar e apoiar jovens estudantes em sua jornada de aprendizado. Acreditamos que o conhecimento é uma ferramenta poderosa para o desenvolvimento pessoal, ensinando valores como dedicação, perseverança e superação.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed animate-fade-up animation-delay-200">
-              Nosso compromisso é proporcionar um ambiente acolhedor onde Maitê e Manuela possam desenvolver todo seu potencial, sempre com o apoio da família e da comunidade. Juntos, estamos construindo o caminho para um futuro brilhante no esporte.
+              Nosso compromisso é proporcionar um ambiente acolhedor onde Maitê e Manuela possam desenvolver todo seu potencial acadêmico, sempre com o apoio da família e da comunidade. Juntos, estamos construindo o caminho para um futuro brilhante nas Olimpíadas de Matemática, Ciências e demais desafios educacionais.
             </p>
           </div>
         </div>

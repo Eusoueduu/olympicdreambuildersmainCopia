@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { CertificadoCarousel } from "@/components/CertificadoCarousel";
 import { Loader2 } from "lucide-react";
 import maitePlaceholder from "@/assets/mait.jpeg";
-import manuelaPlaceholder from "@/assets/manuel.jpeg";
+import manuelaPlaceholder from "@/assets/manuela01.jpeg";
 
 interface Crianca {
   id: string;

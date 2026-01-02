@@ -7,7 +7,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/fotos", label: "Fotos" },
-  { href: "/valores", label: "Valores" },
+  { href: "/carta-convite", label: "Carta Convite" },
   { href: "/objetivos", label: "Objetivos" },
   { href: "/contatos", label: "Contatos" },
 ];

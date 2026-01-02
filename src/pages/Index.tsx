@@ -67,7 +67,7 @@ const Index = () => {
               Conheça Nossas <span className="text-gradient-gold">Estrelas</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Duas jovens talentosas que representam o espírito olímpico através de suas conquistas e dedicação ao esporte.
+              Duas jovens talentosas que representam o espírito olímpico por meio de suas conquistas, dedicação e excelência, agora também nas Olimpíadas do Conhecimento, onde o esforço intelectual se transforma em medalhas e inspiração.
             </p>
           </div>
 
@@ -137,24 +137,24 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <Target className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Disciplina</h3>
-              <p className="text-muted-foreground text-sm">A base de toda grande conquista esportiva.</p>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Educação</h3>
+              <p className="text-muted-foreground text-sm">O alicerce das grandes conquistas acadêmicas.</p>
             </div>
 
             <div className="text-center p-6 animate-fade-up animation-delay-100">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-secondary/20 flex items-center justify-center">
                 <Award className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Dedicação</h3>
-              <p className="text-muted-foreground text-sm">Compromisso diário com a excelência.</p>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Preparação</h3>
+              <p className="text-muted-foreground text-sm">Dedicação constante à excelência nos desafios estudantis.</p>
             </div>
 
             <div className="text-center p-6 animate-fade-up animation-delay-200">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <Star className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Excelência</h3>
-              <p className="text-muted-foreground text-sm">Buscando sempre o melhor de si.</p>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">Oportunidades</h3>
+              <p className="text-muted-foreground text-sm">Unindo conhecimento e prática para formar os campeões do futuro.</p>
             </div>
           </div>
         </div>

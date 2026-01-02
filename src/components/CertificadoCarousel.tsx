@@ -24,7 +24,7 @@ function formatDate(dateStr: string | null): string {
   });
 }
 
-// ✅ MYSQL + HOSTINGER
+// 🔗 Para imagens vindas do banco/Hostinger
 function getPublicImageUrl(path: string | null) {
   if (!path) return null;
   if (path.startsWith("http")) return path;
@@ -37,30 +37,19 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
   const [selectedCert, setSelectedCert] = useState<Certificacao | null>(null);
 
   if (!certificacoes.length) {
-    return (
-      <p className="text-muted-foreground italic">
-        Nenhuma certificação cadastrada.
-      </p>
-    );
+    return <p className="text-muted-foreground italic">Nenhuma certificação cadastrada.</p>;
   }
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? certificacoes.length - 1 : prev - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) =>
-      prev === certificacoes.length - 1 ? 0 : prev + 1
-    );
-  };
+  const goToPrevious = () =>
+    setCurrentIndex((prev) => (prev === 0 ? certificacoes.length - 1 : prev - 1));
+  const goToNext = () =>
+    setCurrentIndex((prev) => (prev === certificacoes.length - 1 ? 0 : prev + 1));
 
   return (
     <>
       {/* ================= CAROUSEL ================= */}
       <div className="relative w-full">
-        <div className="relative overflow-hidden rounded-xl bg-card border">
+        <div className="relative overflow-hidden rounded-xl bg-card border shadow-sm">
           <div
             className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -77,40 +66,41 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
                     setIsModalOpen(true);
                   }}
                 >
-                  {/* ✅ MOBILE FIRST REAL */}
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     {/* IMAGEM */}
-                    <div className="
-                      w-full
-                      sm:w-48
-                      h-52
-                      sm:h-48
-                      rounded-lg
-                      overflow-hidden
-                      bg-muted
-                      flex-shrink-0
-                    ">
+                    <div
+                      className="
+                      w-full sm:w-48
+                      h-52 sm:h-48
+                      rounded-lg overflow-hidden
+                      bg-muted flex-shrink-0 border
+                    "
+                    >
                       {imageUrl ? (
-                        <img
-                          src={imageUrl}
-                          alt={cert.nome_certificado}
-                          className="w-full h-full object-cover"
-                        />
+                        <img src={imageUrl} alt={cert.nome_certificado} className="w-full h-full object-cover" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                           <Award className="w-14 h-14 opacity-40" />
                         </div>
                       )}
                     </div>
 
-                    {/* TEXTO */}
+                    {/* TEXTO DO CERTIFICADO */}
                     <div className="flex-1">
-                      <h4 className="text-base sm:text-xl font-semibold mb-2">
+                      <h4 className="text-lg sm:text-2xl font-bold text-slate-900 mb-3 leading-snug">
                         {cert.nome_certificado}
                       </h4>
 
                       {cert.descricao && (
-                        <p className="text-sm sm:text-base text-muted-foreground mb-2">
+                        <p
+                          className="
+                            text-base sm:text-lg md:text-xl
+                            font-semibold
+                            text-slate-800
+                            leading-relaxed
+                            mb-3
+                          "
+                        >
                           {cert.descricao}
                         </p>
                       )}
@@ -134,30 +124,14 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
           <>
             <button
               onClick={goToPrevious}
-              className="
-                absolute left-1 sm:left-2
-                top-1/2 -translate-y-1/2
-                bg-white/90 border
-                rounded-full
-                w-8 h-8 sm:w-9 sm:h-9
-                flex items-center justify-center
-                shadow
-              "
+              className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-white/90 border rounded-full w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shadow"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
             <button
               onClick={goToNext}
-              className="
-                absolute right-1 sm:right-2
-                top-1/2 -translate-y-1/2
-                bg-white/90 border
-                rounded-full
-                w-8 h-8 sm:w-9 sm:h-9
-                flex items-center justify-center
-                shadow
-              "
+              className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-white/90 border rounded-full w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shadow"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -171,9 +145,7 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
               key={i}
               className={cn(
                 "h-2 rounded-full transition-all",
-                i === currentIndex
-                  ? "w-6 bg-primary"
-                  : "w-2 bg-muted"
+                i === currentIndex ? "w-6 bg-primary" : "w-2 bg-muted"
               )}
             />
           ))}
@@ -183,49 +155,31 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
       {/* ================= MODAL ================= */}
       {isModalOpen && selectedCert && (
         <div
-          className="
-            fixed inset-0 z-50
-            bg-black/80
-            flex items-center justify-center
-            p-3 sm:p-4
-          "
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-3 sm:p-4"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="
-              relative bg-white rounded-xl
-              max-w-3xl w-full
-              max-h-[90dvh]
-              overflow-hidden
-            "
+            className="relative bg-white rounded-xl max-w-3xl w-full max-h-[90dvh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="absolute top-3 right-3 z-10"
-              onClick={() => setIsModalOpen(false)}
-            >
+            <button className="absolute top-3 right-3 z-10" onClick={() => setIsModalOpen(false)}>
               <X />
             </button>
 
             {selectedCert.foto_url && (
               <img
                 src={getPublicImageUrl(selectedCert.foto_url)!}
-                className="
-                  w-full
-                  max-h-[55dvh]
-                  object-contain
-                  bg-black
-                "
+                className="w-full max-h-[55dvh] object-contain bg-black"
               />
             )}
 
             <div className="p-4 sm:p-6 overflow-y-auto">
-              <h3 className="text-lg sm:text-2xl font-bold mb-2">
+              <h3 className="text-xl sm:text-3xl font-bold mb-3 text-slate-900 leading-tight">
                 {selectedCert.nome_certificado}
               </h3>
 
               {selectedCert.descricao && (
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 leading-relaxed">
                   {selectedCert.descricao}
                 </p>
               )}

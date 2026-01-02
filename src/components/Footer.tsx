@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Inspirando jovens atletas a alcançarem seus sonhos através do esporte, disciplina e dedicação.
+              Inspirando jovens atletas a alcançarem seus sonhos através das olimpíadas científicas, com disciplina e dedicação.
             </p>
           </div>
 

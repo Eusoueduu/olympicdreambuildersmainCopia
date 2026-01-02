@@ -112,7 +112,7 @@ const Fotos = () => {
                   : `${API_BASE}${fotos[index].foto_url}`
               }
               alt={fotos[index].titulo}
-              className="w-full h-[380px] object-cover rounded-xl shadow"
+              className="w-full h-[580px] object-cover rounded-xl shadow"
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
                   "https://via.placeholder.com/800x400?text=Imagem+indisponível";

@@ -67,55 +67,60 @@ const Contatos = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {/* Instagram */}
             <a
-              href={contato?.instagram ? `https://instagram.com/${contato.instagram.replace("@", "")}` : "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up text-center"
-            >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Instagram className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                Instagram
-              </h3>
-              <p className="text-primary font-medium">
-                {contato?.instagram || "@comunidadeolimpica"}
-              </p>
-            </a>
+  href="https://www.instagram.com/comunidade_olimpica/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up text-center"
+>
+  <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+    <Instagram className="w-8 h-8 text-primary-foreground" />
+  </div>
+  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+    Instagram
+  </h3>
+  <p className="text-primary font-medium">
+    @comunidade_olimpica
+  </p>
+</a>
+
 
             {/* Facebook */}
-            <a
-              href={contato?.facebook ? `https://facebook.com/${contato.facebook}` : "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up animation-delay-100 text-center"
-            >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-[#1877F2] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Facebook className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                Facebook
-              </h3>
-              <p className="text-primary font-medium">
-                {contato?.facebook || "Comunidade Olímpica"}
-              </p>
-            </a>
+            {/* E-mail */}
+<a
+  href="mailto:bentesmaite@gmail.com"
+  className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up animation-delay-100 text-center"
+>
+  <div className="w-16 h-16 mx-auto rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+    <Mail className="w-8 h-8 text-primary-foreground" />
+  </div>
+
+  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+    E-mail
+  </h3>
+
+  <p className="text-primary font-medium break-all">
+    bentesmaite@gmail.com
+  </p>
+</a>
+
+
 
             {/* Phone */}
             <a
-              href={contato?.telefone ? `tel:${contato.telefone.replace(/\D/g, "")}` : "#"}
-              className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up animation-delay-200 text-center sm:col-span-2 lg:col-span-1"
-            >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-olympic-green flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Phone className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                Telefone
-              </h3>
-              <p className="text-primary font-medium">
-                {contato?.telefone || "(00) 00000-0000"}
-              </p>
-            </a>
+  href="tel:+5591985716273"
+  className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up animation-delay-200 text-center sm:col-span-2 lg:col-span-1"
+>
+  <div className="w-16 h-16 mx-auto rounded-2xl bg-olympic-green flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+    <Phone className="w-8 h-8 text-primary-foreground" />
+  </div>
+  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+    Telefone
+  </h3>
+  <p className="text-primary font-medium">
+    (91) 98571-6273
+  </p>
+</a>
+
           </div>
         </div>
       </section>
@@ -151,7 +156,7 @@ const Contatos = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                A Comunidade Olímpica atua de forma local, com foco no desenvolvimento esportivo de jovens atletas. Para informações sobre treinos, eventos e parcerias, entre em contato através dos nossos canais de comunicação.
+                Atua de forma local, com foco no desenvolvimento acadêmico de jovens talentos. Para informações sobre programas de preparação, competições e parcerias, entre em contato através dos nossos canais de comunicação.
               </p>
             </div>
           </div>
