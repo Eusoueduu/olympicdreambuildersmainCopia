@@ -107,7 +107,7 @@ const Contatos = () => {
 
             {/* Phone */}
             <a
-  href="tel:+5591985716273"
+  href="tel:+5591989716273"
   className="group bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-up animation-delay-200 text-center sm:col-span-2 lg:col-span-1"
 >
   <div className="w-16 h-16 mx-auto rounded-2xl bg-olympic-green flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -117,7 +117,7 @@ const Contatos = () => {
     Telefone
   </h3>
   <p className="text-primary font-medium">
-    (91) 98571-6273
+    (91) 998971-6273
   </p>
 </a>
 

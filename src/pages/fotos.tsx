@@ -52,7 +52,6 @@ function safeJsonParse<T>(value: any, fallback: T): T {
 function toAbsoluteUrl(url: string | null | undefined): string | null {
   if (!url) return null;
   if (url.startsWith("http")) return url;
-  // se vier "/images/news/portal.jpg" vira "https://para24h.com/images/news/portal.jpg"
   return `${API_BASE}${url.startsWith("/") ? "" : "/"}${url}`;
 }
 
@@ -64,6 +63,9 @@ const Fotos = () => {
   const [loading, setLoading] = useState(true);
   const [index, setIndex] = useState(0);
   const [error, setError] = useState<string | null>(null);
+
+  // ✅ modal fullscreen
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -80,7 +82,6 @@ const Fotos = () => {
         if (!videosRes.ok) throw new Error("Erro ao carregar vídeos");
         if (!newsRes.ok) throw new Error("Erro ao carregar notícias");
 
-        // pega como text e faz parse seguro (porque às vezes PHP cospe espaço/HTML)
         const [fotosRaw, videosRaw, newsRaw] = await Promise.all([
           fotosRes.text(),
           videosRes.text(),
@@ -154,29 +155,35 @@ const Fotos = () => {
             Nenhuma foto cadastrada.
           </p>
         ) : (
-          <div className="relative max-w-4xl mx-auto">
-            <img
-              src={toAbsoluteUrl(fotos[index].foto_url) || ""}
-              alt={fotos[index].titulo}
-              className="w-full h-[1080px] object-cover rounded-xl shadow"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src =
-                  "https://via.placeholder.com/1200x675?text=Imagem+indispon%C3%ADvel";
-              }}
-            />
+          <div className="relative max-w-5xl mx-auto px-4">
+            {/* ✅ agora não corta: object-contain + altura responsiva */}
+            <div className="rounded-xl shadow bg-black overflow-hidden">
+              <img
+                src={toAbsoluteUrl(fotos[index].foto_url) || ""}
+                alt={fotos[index].titulo}
+                className="w-full h-[70vh] object-contain cursor-zoom-in"
+                onClick={() => setOpen(true)}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "https://via.placeholder.com/1200x675?text=Imagem+indispon%C3%ADvel";
+                }}
+              />
+            </div>
 
             {fotos.length > 1 && (
               <>
                 <button
                   onClick={prev}
-                  className="absolute top-1/2 left-3 -translate-y-1/2 bg-white/80 w-10 h-10 rounded-full flex items-center justify-center shadow"
+                  className="absolute top-1/2 left-6 -translate-y-1/2 bg-white/80 w-10 h-10 rounded-full flex items-center justify-center shadow"
+                  aria-label="Foto anterior"
                 >
                   <ChevronLeft />
                 </button>
 
                 <button
                   onClick={next}
-                  className="absolute top-1/2 right-3 -translate-y-1/2 bg-white/80 w-10 h-10 rounded-full flex items-center justify-center shadow"
+                  className="absolute top-1/2 right-6 -translate-y-1/2 bg-white/80 w-10 h-10 rounded-full flex items-center justify-center shadow"
+                  aria-label="Próxima foto"
                 >
                   <ChevronRight />
                 </button>
@@ -184,8 +191,76 @@ const Fotos = () => {
             )}
 
             <p className="text-center mt-3 text-muted-foreground">
-              {fotos[index].titulo} — {formatDate(fotos[index].data)}
+              {fotos[index].titulo} {fotos[index].data ? "—" : ""}{" "}
+              {formatDate(fotos[index].data)}
             </p>
+          </div>
+        )}
+
+        {/* ✅ MODAL FULLSCREEN: mostra a foto inteira */}
+        {open && fotos.length > 0 && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+            onClick={() => setOpen(false)}
+          >
+            {/* Fechar */}
+            <button
+              className="absolute top-4 right-4 text-white text-3xl leading-none"
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpen(false);
+              }}
+              aria-label="Fechar"
+            >
+              ✕
+            </button>
+
+            {/* Voltar */}
+            {fotos.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prev();
+                }}
+                className="absolute left-4 md:left-6 text-white text-5xl leading-none"
+                aria-label="Foto anterior"
+              >
+                ‹
+              </button>
+            )}
+
+            <img
+              src={toAbsoluteUrl(fotos[index].foto_url) || ""}
+              alt={fotos[index].titulo}
+              className="max-w-[95vw] max-h-[92vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src =
+                  "https://via.placeholder.com/1200x675?text=Imagem+indispon%C3%ADvel";
+              }}
+            />
+
+            {/* Próxima */}
+            {fotos.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  next();
+                }}
+                className="absolute right-4 md:right-6 text-white text-5xl leading-none"
+                aria-label="Próxima foto"
+              >
+                ›
+              </button>
+            )}
+
+            {/* Legenda */}
+            <div className="absolute bottom-4 left-0 right-0 text-center px-4">
+              <p className="text-white/90 text-sm">
+                {fotos[index].titulo} {fotos[index].data ? "—" : ""}{" "}
+                {formatDate(fotos[index].data)}
+              </p>
+            </div>
           </div>
         )}
       </section>
