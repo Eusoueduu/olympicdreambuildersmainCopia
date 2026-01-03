@@ -24,12 +24,12 @@ const Index = () => {
             </span>
             
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-fade-up animation-delay-100">
-              Bem-vinda à{" "}
+              Bem-vindos à{" "}
               <span className="text-gradient-gold">Comunidade Olímpica Acadêmica</span>
             </h1>
             
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-up animation-delay-200">
-              Um espaço dedicado ao desenvolvimento acadêmico, com foco nas principais Olimpíadas estudantis: OBA, OBMEP, Canguru, OIMSF, GOA E Matific. Aqui, conhecimento, preparação e portunidades se unem para formar os campeões da educação.
+              Um espaço dedicado ao desenvolvimento acadêmico, com foco nas principais Olimpíadas estudantis: OBA, OBMEP, Canguru, OIMSF, GOA E Matific. Aqui, conhecimento, preparação e oportunidades se unem para formar os campeões da educação.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up animation-delay-300">

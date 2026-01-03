@@ -56,20 +56,15 @@ const CartaConvite = () => {
               </h2>
 
               <p className="text-muted-foreground leading-relaxed">
-                A Comunidade Olímpica Acadêmica nasce com o propósito de oferecer um ambiente
-                acolhedor, seguro e inspirador, onde o esporte se torna ferramenta de educação,
-                disciplina e construção de caráter.
+                A Comunidade Olímpica Acadêmica oferece um ambiente acolhedor e inspirador, dedicado às principais olimpíadas estudantis: OBA, OBMEP, Canguru, OIMSF, GOA e Matific.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Esta carta-convite é um chamado para que famílias, atletas e parceiros façam parte
-                deste projeto e vivam experiências que transformam dentro e fora das competições.
+                Cada estudante é única, cada conquista é celebrada e cada desafio é uma oportunidade de aprendizado.
+Entre em contato para mais informações e participe desta comunidade.
               </p>
 
-              <p className="text-muted-foreground leading-relaxed">
-                Cada atleta é única. Cada conquista é celebrada. Cada desafio é uma oportunidade
-                para aprender e evoluir.
-              </p>
+               
             </div>
           </div>
         </div>

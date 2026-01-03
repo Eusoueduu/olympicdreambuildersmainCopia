@@ -37,11 +37,16 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
   const [selectedCert, setSelectedCert] = useState<Certificacao | null>(null);
 
   if (!certificacoes.length) {
-    return <p className="text-muted-foreground italic">Nenhuma certificação cadastrada.</p>;
+    return (
+      <p className="text-muted-foreground italic">
+        Nenhuma certificação cadastrada.
+      </p>
+    );
   }
 
   const goToPrevious = () =>
     setCurrentIndex((prev) => (prev === 0 ? certificacoes.length - 1 : prev - 1));
+
   const goToNext = () =>
     setCurrentIndex((prev) => (prev === certificacoes.length - 1 ? 0 : prev + 1));
 
@@ -70,14 +75,18 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
                     {/* IMAGEM */}
                     <div
                       className="
-                      w-full sm:w-48
-                      h-52 sm:h-48
-                      rounded-lg overflow-hidden
-                      bg-muted flex-shrink-0 border
-                    "
+                        w-full sm:w-48
+                        h-52 sm:h-48
+                        rounded-lg overflow-hidden
+                        bg-muted flex-shrink-0 border
+                      "
                     >
                       {imageUrl ? (
-                        <img src={imageUrl} alt={cert.nome_certificado} className="w-full h-full object-cover" />
+                        <img
+                          src={imageUrl}
+                          alt={cert.nome_certificado}
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                           <Award className="w-14 h-14 opacity-40" />
@@ -91,14 +100,21 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
                         {cert.nome_certificado}
                       </h4>
 
+                      {/* ✅ DESCRIÇÃO EM AZUL BRILHANTE (DISCRETO) */}
                       {cert.descricao && (
                         <p
                           className="
+                            inline-flex items-center
                             text-base sm:text-lg md:text-xl
                             font-semibold
-                            text-slate-800
+                            text-blue-600
+                            bg-blue-50
+                            border border-blue-100
+                            px-3 py-1.5
+                            rounded-lg
                             leading-relaxed
                             mb-3
+                            shadow-[0_0_10px_rgba(37,99,235,0.15)]
                           "
                         >
                           {cert.descricao}
@@ -162,7 +178,10 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
             className="relative bg-white rounded-xl max-w-3xl w-full max-h-[90dvh] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="absolute top-3 right-3 z-10" onClick={() => setIsModalOpen(false)}>
+            <button
+              className="absolute top-3 right-3 z-10"
+              onClick={() => setIsModalOpen(false)}
+            >
               <X />
             </button>
 
@@ -170,6 +189,7 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
               <img
                 src={getPublicImageUrl(selectedCert.foto_url)!}
                 className="w-full max-h-[55dvh] object-contain bg-black"
+                alt={selectedCert.nome_certificado}
               />
             )}
 
@@ -178,8 +198,22 @@ export function CertificadoCarousel({ certificacoes }: CertificadoCarouselProps)
                 {selectedCert.nome_certificado}
               </h3>
 
+              {/* ✅ MODAL: DESCRIÇÃO TAMBÉM EM AZUL */}
               {selectedCert.descricao && (
-                <p className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 leading-relaxed">
+                <p
+                  className="
+                    inline-flex items-center
+                    text-base sm:text-lg md:text-xl
+                    font-semibold
+                    text-blue-600
+                    bg-blue-50
+                    border border-blue-100
+                    px-3 py-2
+                    rounded-lg
+                    leading-relaxed
+                    shadow-[0_0_10px_rgba(37,99,235,0.15)]
+                  "
+                >
                   {selectedCert.descricao}
                 </p>
               )}

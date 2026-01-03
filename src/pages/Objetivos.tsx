@@ -92,11 +92,12 @@ const Objetivos = () => {
               Nossa <span className="text-gradient-gold">Visão</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8 animate-fade-up animation-delay-100">
-              A Comunidade Acadêmica nasceu com o propósito de inspirar e apoiar jovens estudantes em sua jornada de aprendizado. Acreditamos que o conhecimento é uma ferramenta poderosa para o desenvolvimento pessoal, ensinando valores como dedicação, perseverança e superação.
+              A Comunidade Acadêmica nasceu para inspirar e fortalecer a trajetória de jovens estudantes dedicadas à excelência acadêmica. Nosso objetivo é alcançar reconhecimento nacional e internacional por meio de conquistas em olimpíadas científicas, como matemática, ciências, física e astronomia, representando o Brasil no exterior.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed animate-fade-up animation-delay-200">
-              Nosso compromisso é proporcionar um ambiente acolhedor onde Maitê e Manuela possam desenvolver todo seu potencial acadêmico, sempre com o apoio da família e da comunidade. Juntos, estamos construindo o caminho para um futuro brilhante nas Olimpíadas de Matemática, Ciências e demais desafios educacionais.
+              Acreditamos que as olimpíadas científicas abrem portas para grandes universidades no Brasil e no mundo. Com o apoio da família, da comunidade, de instituições e empresas, seguimos construindo um futuro de oportunidades, aprendizado e reconhecimento acadêmico.
             </p>
+            
           </div>
         </div>
       </section>
