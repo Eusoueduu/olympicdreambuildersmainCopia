@@ -117,7 +117,7 @@ const Contatos = () => {
     Telefone
   </h3>
   <p className="text-primary font-medium">
-    (91) 998971-6273
+    (91) 98971-6273
   </p>
 </a>
 
